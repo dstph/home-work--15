@@ -37,30 +37,30 @@
 // console.dir(pussy);
 
 
-let data = {
-	get model(){
-		return  this.modelValue;
-	},
-	set model(value){
-		if(this.modelValue){
-			this.str = this.modelValue.split(value);
-			this.modelValue = {symbol: value, count: this.str.length};
-		} else{
-			this.modelValue = value;
-		}
-	}
-}
+// let data = {
+// 	get model(){
+// 		return  this.modelValue;
+// 	},
+// 	set model(value){
+// 		if(this.modelValue){
+// 			this.str = this.modelValue.split(value);
+// 			this.modelValue = {symbol: value, count: this.str.length};
+// 		} else{
+// 			this.modelValue = value;
+// 		}
+// 	}
+// }
 
 
-data.model = 'never sleep';
+// data.model = 'never sleep';
 
-console.log(data.model);
+// console.log(data.model);
 
-data.model = ' ';
+// data.model = ' ';
 
-console.log(data.str);
-console.dir(data);
-console.log(data.model);
+// console.log(data.str);
+// console.dir(data);
+// console.log(data.model);
 
 
 
@@ -81,3 +81,22 @@ console.log(data.model);
 
 
 
+let obj = {x:10,
+ y: 20, 
+ p: 15,
+ set model(rap){
+	for(key in rap){
+		if(obj.hasOwnProperty(key)){
+			obj[key] = eval(obj[key] + [rap[key].operation] + rap[key].value);
+		} else{
+			obj[key] = rap[key].value;
+		}
+	}
+}
+}
+
+obj.model = { x: { value: 33, operation: '*' }, 
+ 			z: { value: 75, operation: '+' }, 
+ 			   p: { value: 4, operation: '%' } };
+
+console.log(obj);

@@ -1,40 +1,41 @@
 
-// let	table = document.createElement('table'),
-// 	thead = document.createElement('thead'),
-// 	tr = document.createElement('tr'),
-// 	th1 = document.createElement('th'),
-// 	th2 = document.createElement('th');
+let	table = document.createElement('table'),
+	thead = document.createElement('thead'),
+	tr = document.createElement('tr'),
+	th1 = document.createElement('th'),
+	th2 = document.createElement('th');
 
-// th1.innerText = "number";
-// th2.innerText = "Value";
+th1.innerText = "number";
+th2.innerText = "Value";
 
-// document.body.appendChild(table);
-// table.appendChild(thead);
-// thead.appendChild(tr);
-// tr.appendChild(th1);
-// tr.appendChild(th2);
+document.body.appendChild(table);
+table.appendChild(thead);
+thead.appendChild(tr);
+tr.appendChild(th1);
+tr.appendChild(th2);
 
-// Array.prototype.render = function  render(){
-// 	for(i=0; i<this.length; i++){
-// 		let tr_in = document.createElement('tr'),
-// 		    td_number = document.createElement('td'),
-// 		    td_value = document.createElement('td');
-		
-// 		td_number.innerText = i;
-// 		td_value.innerText = this[i];
+Object.defineProperty(Array.prototype, 'render',{
+    get: function render() {
+		for(i=0; i<this.length; i++){
+			let tr_in = document.createElement('tr'),
+			    td_number = document.createElement('td'),
+			    td_value = document.createElement('td');
+			
+			td_number.innerText = i;
+			td_value.innerText = this[i];
 
-// 		table.appendChild(tr_in);
-// 		tr_in.appendChild(td_number);
-// 		tr_in.appendChild(td_value);
+			table.appendChild(tr_in);
+			tr_in.appendChild(td_number);
+			tr_in.appendChild(td_value);
+		}
 
+	}
+});
 
-// 	}
-// };
+let pussy = ["Benya", "Kotleta", "Eva", "Lucifer"];
+pussy.render;
 
-// let pussy = ["Benya", "Kotleta", "Eva", "Lucifer"];
-// pussy.render();
-
-// console.dir(pussy);
+console.dir(pussy);
 
 
 // let data = {
@@ -81,22 +82,22 @@
 
 
 
-let obj = {x:10,
- y: 20, 
- p: 15,
- set model(rap){
-	for(key in rap){
-		if(obj.hasOwnProperty(key)){
-			obj[key] = eval(obj[key] + [rap[key].operation] + rap[key].value);
-		} else{
-			obj[key] = rap[key].value;
-		}
-	}
-}
-}
+// let obj = {x:10,
+//  y: 20, 
+//  p: 15,
+//  set model(rap){
+// 	for(key in rap){
+// 		if(obj.hasOwnProperty(key)){
+// 			obj[key] = eval(obj[key] + [rap[key].operation] + rap[key].value);
+// 		} else{
+// 			obj[key] = rap[key].value;
+// 		}
+// 	}
+// }
+// }
 
-obj.model = { x: { value: 33, operation: '*' }, 
- 			z: { value: 75, operation: '+' }, 
- 			   p: { value: 4, operation: '%' } };
+// obj.model = { x: { value: 33, operation: '*' }, 
+//  			z: { value: 75, operation: '+' }, 
+//  			   p: { value: 4, operation: '%' } };
 
-console.log(obj);
+// console.log(obj);
